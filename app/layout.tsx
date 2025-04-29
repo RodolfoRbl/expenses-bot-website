@@ -42,6 +42,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
+        <head>
+        <link rel="icon" href="/logo.svg" type="image/svg+xml" />
+      </head>
       <body
         className={`${inter.variable} ${poppins.variable} antialiased bg-background text-foreground`}
       >
