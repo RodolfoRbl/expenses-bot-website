@@ -11,7 +11,6 @@ export default function Footer() {
             <ul className="flex justify-center space-x-8">
               {[
                 { name: "Features", href: "#features" },
-                { name: "Screenshots", href: "#screenshots" },
                 { name: "Pricing", href: "#pricing" },
                 { name: "FAQ", href: "#faq" },
               ].map((item, i) => (

@@ -3,6 +3,18 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 
+function NavLink({ href, children, scrolled }: { href: string; children: React.ReactNode; scrolled: boolean }) {
+  return (
+    <Link
+      href={href}
+      className={`py-2 px-1 border-b-2 border-transparent hover:border-accent transition-colors ${scrolled ? "text-white" : "text-gray-700"
+        } hover:text-accent`}
+    >
+      {children}
+    </Link>
+  );
+}
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -23,8 +35,8 @@ export default function Navbar() {
 
   return (
     <header className={`sticky top-0 z-50 transition-all duration-300 ${scrolled
-        ? "backdrop-blur-lg bg-white/70 dark:bg-gray-900/80 shadow-sm"
-        : "bg-transparent"
+      ? "backdrop-blur-lg bg-gray-900/80 shadow-sm"
+      : "bg-transparent"
       }`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 md:h-20">
@@ -40,30 +52,16 @@ export default function Navbar() {
 
           {/* Desktop menu */}
           <nav className="hidden md:flex space-x-8">
-            <Link
-              href="#features"
-              className="text-gray-700 dark:text-gray-200 hover:text-accent transition-colors py-2 px-1 border-b-2 border-transparent hover:border-accent"
-            >
+
+            <NavLink href="#features" scrolled={scrolled}>
               Features
-            </Link>
-            <Link
-              href="#screenshots"
-              className="text-gray-700 dark:text-gray-200 hover:text-accent transition-colors py-2 px-1 border-b-2 border-transparent hover:border-accent"
-            >
-              Screenshots
-            </Link>
-            <Link
-              href="#pricing"
-              className="text-gray-700 dark:text-gray-200 hover:text-accent transition-colors py-2 px-1 border-b-2 border-transparent hover:border-accent"
-            >
+            </NavLink>
+            <NavLink href="#pricing" scrolled={scrolled}>
               Pricing
-            </Link>
-            <Link
-              href="#faq"
-              className="text-gray-700 dark:text-gray-200 hover:text-accent transition-colors py-2 px-1 border-b-2 border-transparent hover:border-accent"
-            >
+            </NavLink>
+            <NavLink href="#faq" scrolled={scrolled}>
               FAQ
-            </Link>
+            </NavLink>
           </nav>
 
           {/* CTA Button */}

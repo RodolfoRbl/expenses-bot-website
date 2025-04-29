@@ -2,15 +2,23 @@
 
 :root {
   /* Updated color palette */
-  --background: #ffffff; /* Clean white */
-  --foreground: #03045e; /* Deep navy for text */
-  --accent: #0077b6; /* Medium blue as primary accent */
-  --accent-light: #00b4d8; /* Bright blue accent */
-  --accent-lighter: #90e0ef; /* Light blue for gradients */
-  --accent-dark: #03045e; /* Deep navy for dark accents */
-  --secondary: #caf0f8; /* Pale blue */
-  --secondary-dark: #0077b6; /* Medium blue */
-  
+  --background: #ffffff;
+  /* Clean white */
+  --foreground: #03045e;
+  /* Deep navy for text */
+  --accent: #0077b6;
+  /* Medium blue as primary accent */
+  --accent-light: #00b4d8;
+  /* Bright blue accent */
+  --accent-lighter: #90e0ef;
+  /* Light blue for gradients */
+  --accent-dark: #03045e;
+  /* Deep navy for dark accents */
+  --secondary: #caf0f8;
+  /* Pale blue */
+  --secondary-dark: #0077b6;
+  /* Medium blue */
+
   /* Neutral grays */
   --gray-50: #f8fafc;
   --gray-100: #f1f5f9;
@@ -22,30 +30,36 @@
   --gray-700: #334155;
   --gray-800: #1e293b;
   --gray-900: #0f172a;
-  
+
   /* Status colors */
-  --success: #10b981; /* Green */
-  --warning: #f59e0b; /* Amber */
-  --error: #ef4444; /* Red */
-  
+  --success: #10b981;
+  /* Green */
+  --warning: #f59e0b;
+  /* Amber */
+  --error: #ef4444;
+  /* Red */
+
   /* Modern shadow values with blue tint */
   --shadow-sm: 0 1px 2px 0 rgba(0, 119, 182, 0.03);
   --shadow: 0 4px 12px rgba(0, 119, 182, 0.08);
   --shadow-md: 0 8px 16px rgba(0, 119, 182, 0.1);
   --shadow-lg: 0 12px 24px -4px rgba(0, 119, 182, 0.12);
   --shadow-xl: 0 20px 32px -8px rgba(0, 119, 182, 0.16);
-  
+
   /* Glassmorphism */
   --glass-background: rgba(255, 255, 255, 0.7);
   --glass-background-dark: rgba(3, 4, 94, 0.75);
   --glass-border: rgba(202, 240, 248, 0.5);
   --glass-border-dark: rgba(255, 255, 255, 0.1);
-  
+
   /* Glow effects */
   --glow-blue: 0 0 20px rgba(0, 180, 216, 0.3);
 
   /* Hero section background */
-  --hero-bg: #f8fdff; /* Very light blue */
+  --hero-bg: #f8fdff;
+  /* Very light blue */
+
+
 }
 
 @theme inline {
@@ -56,15 +70,6 @@
   --color-secondary: var(--secondary);
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   --font-mono: 'Poppins', system-ui, -apple-system, sans-serif;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    --background: #03045e; /* Deep navy background */
-    --foreground: #caf0f8; /* Pale blue text */
-    --secondary: #0077b6; /* Medium blue secondary */
-    --secondary-dark: #00b4d8; /* Bright blue secondary */
-  }
 }
 
 body {
@@ -88,7 +93,12 @@ section {
   }
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-mono);
   font-weight: 600;
   line-height: 1.2;
@@ -127,7 +137,8 @@ a:hover {
 }
 
 /* Modern gradient button */
-button, .button {
+button,
+.button {
   background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
   color: #fff;
   padding: 0.75rem 1.5rem;
@@ -146,12 +157,14 @@ button, .button {
   z-index: 1;
 }
 
-button:hover, .button:hover {
+button:hover,
+.button:hover {
   box-shadow: var(--shadow-lg), var(--glow-blue);
   transform: translateY(-2px);
 }
 
-button:before, .button:before {
+button:before,
+.button:before {
   content: '';
   position: absolute;
   top: 0;
@@ -164,7 +177,8 @@ button:before, .button:before {
   transition: opacity 0.3s ease;
 }
 
-button:hover:before, .button:hover:before {
+button:hover:before,
+.button:hover:before {
   opacity: 1;
 }
 
@@ -194,12 +208,6 @@ button:hover:before, .button:hover:before {
   transform: translateY(-4px);
 }
 
-@media (prefers-color-scheme: dark) {
-  .glass-card {
-    background: var(--glass-background-dark);
-    border-color: var(--glass-border-dark);
-  }
-}
 
 /* Modern container */
 .container {
