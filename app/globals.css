@@ -1,15 +1,15 @@
 @import "tailwindcss";
 
 :root {
-  /* Modern color palette with vibrant blues */
+  /* Updated color palette */
   --background: #ffffff; /* Clean white */
-  --foreground: #111827; /* Near black text */
-  --accent: #2563eb; /* Vibrant blue */
-  --accent-light: #3b82f6; /* Lighter blue */
-  --accent-lighter: #60a5fa; /* Even lighter blue for gradients */
-  --accent-dark: #1d4ed8; /* Darker blue */
-  --secondary: #f9fafb; /* Very light gray */
-  --secondary-dark: #374151; /* Dark gray */
+  --foreground: #03045e; /* Deep navy for text */
+  --accent: #0077b6; /* Medium blue as primary accent */
+  --accent-light: #00b4d8; /* Bright blue accent */
+  --accent-lighter: #90e0ef; /* Light blue for gradients */
+  --accent-dark: #03045e; /* Deep navy for dark accents */
+  --secondary: #caf0f8; /* Pale blue */
+  --secondary-dark: #0077b6; /* Medium blue */
   
   /* Neutral grays */
   --gray-50: #f8fafc;
@@ -29,20 +29,23 @@
   --error: #ef4444; /* Red */
   
   /* Modern shadow values with blue tint */
-  --shadow-sm: 0 1px 2px 0 rgba(30, 58, 138, 0.03);
-  --shadow: 0 4px 12px rgba(30, 58, 138, 0.08);
-  --shadow-md: 0 8px 16px rgba(30, 58, 138, 0.1);
-  --shadow-lg: 0 12px 24px -4px rgba(30, 58, 138, 0.12);
-  --shadow-xl: 0 20px 32px -8px rgba(30, 58, 138, 0.16);
+  --shadow-sm: 0 1px 2px 0 rgba(0, 119, 182, 0.03);
+  --shadow: 0 4px 12px rgba(0, 119, 182, 0.08);
+  --shadow-md: 0 8px 16px rgba(0, 119, 182, 0.1);
+  --shadow-lg: 0 12px 24px -4px rgba(0, 119, 182, 0.12);
+  --shadow-xl: 0 20px 32px -8px rgba(0, 119, 182, 0.16);
   
   /* Glassmorphism */
   --glass-background: rgba(255, 255, 255, 0.7);
-  --glass-background-dark: rgba(15, 23, 42, 0.75);
-  --glass-border: rgba(255, 255, 255, 0.5);
+  --glass-background-dark: rgba(3, 4, 94, 0.75);
+  --glass-border: rgba(202, 240, 248, 0.5);
   --glass-border-dark: rgba(255, 255, 255, 0.1);
   
   /* Glow effects */
-  --glow-blue: 0 0 20px rgba(59, 130, 246, 0.3);
+  --glow-blue: 0 0 20px rgba(0, 180, 216, 0.3);
+
+  /* Hero section background */
+  --hero-bg: #f8fdff; /* Very light blue */
 }
 
 @theme inline {
@@ -55,12 +58,12 @@
   --font-mono: 'Poppins', system-ui, -apple-system, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   :root {
-    --background: #0f172a; /* Dark blue background */
-    --foreground: #f8fafc; /* Light text */
-    --secondary: #1e293b; /* Darker secondary */
-    --secondary-dark: #334155; /* Even darker secondary */
+    --background: #03045e; /* Deep navy background */
+    --foreground: #caf0f8; /* Pale blue text */
+    --secondary: #0077b6; /* Medium blue secondary */
+    --secondary-dark: #00b4d8; /* Bright blue secondary */
   }
 }
 
@@ -86,7 +89,6 @@ section {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: var(--foreground);
   font-family: var(--font-mono);
   font-weight: 600;
   line-height: 1.2;
@@ -209,7 +211,7 @@ button:hover:before, .button:hover:before {
 
 /* Gradient text */
 .gradient-text {
-  background: linear-gradient(90deg, var(--accent) 0%, var(--accent-lighter) 100%);
+  background: linear-gradient(90deg, var(--accent) 10%, var(--accent-lighter) 150%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -222,11 +224,11 @@ button:hover:before, .button:hover:before {
 }
 
 .bg-gradient-secondary {
-  background: linear-gradient(135deg, var(--gray-50) 0%, var(--gray-100) 100%);
+  background: linear-gradient(135deg, var(--secondary) 0%, var(--accent-lighter) 100%);
 }
 
 .bg-gradient-light {
-  background: linear-gradient(135deg, #ffffff 0%, var(--gray-50) 100%);
+  background: linear-gradient(135deg, #ffffff 0%, var(--secondary) 100%);
 }
 
 /* Soft glow elements */
@@ -246,4 +248,15 @@ button:hover:before, .button:hover:before {
 .card:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-lg);
+}
+
+/* Hero section styling */
+.hero-section {
+  background-color: var(--hero-bg);
+  background-image: linear-gradient(to bottom, #ffffff, var(--secondary));
+}
+
+/* For pure white background option */
+.hero-section-white {
+  background-color: #ffffff;
 }

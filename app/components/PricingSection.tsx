@@ -1,160 +1,104 @@
-import { Check } from "./icons/Check";
-
-const pricingPlans = [
-  {
-    name: "Basic",
-    price: "Free",
-    description: "Perfect for individuals just starting to track their expenses",
-    features: [
-      "Unlimited expense tracking",
-      "Daily and weekly reports",
-      "Basic categorization",
-      "7-day expense history"
-    ],
-    cta: "Start for Free",
-    popular: false
-  },
-  {
-    name: "Premium",
-    price: "$3.99",
-    period: "per month",
-    description: "Enhanced features for better financial management",
-    features: [
-      "Everything in Basic",
-      "Unlimited expense history",
-      "Custom categories",
-      "Monthly & yearly insights",
-      "Budget planning & alerts",
-      "Data export (CSV)"
-    ],
-    cta: "Get Premium",
-    popular: true
-  },
-  {
-    name: "Family",
-    price: "$7.99",
-    period: "per month",
-    description: "Track expenses with family members or roommates",
-    features: [
-      "Everything in Premium",
-      "Up to 5 users",
-      "Shared expenses tracking",
-      "Group budgets",
-      "Split bill calculations",
-      "Priority support"
-    ],
-    cta: "Coming Soon",
-    disabled: true,
-    popular: false
-  }
-];
+import React from 'react';
 
 export default function PricingSection() {
   return (
-    <section id="pricing" className="py-20 md:py-28 relative">
-      {/* Background elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-48 -right-48 w-96 h-96 bg-accent/5 rounded-full filter blur-3xl"></div>
-        <div className="absolute -bottom-48 -left-48 w-96 h-96 bg-accent-lighter/5 rounded-full filter blur-3xl"></div>
-      </div>
-      
-      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="pricing" className="py-20 md:py-28 bg-white">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <div className="inline-block px-3 py-1 mb-3 rounded-full bg-accent/10 text-accent text-sm font-medium">
-            Pricing Options
+            Simple Pricing
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-            Simple <span className="gradient-text">Pricing</span> Plans
+            Choose Your <span className="text-accent">Plan</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Start using SpendTracker for free and upgrade when you need more features.
+            Start for free and upgrade when you need more features.
           </p>
         </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          {pricingPlans.map((plan, index) => (
-            <div 
-              key={index} 
-              className={`relative overflow-hidden ${
-                plan.popular 
-                  ? "glass-card border-2 border-accent bg-white/80 dark:bg-gray-800/80 shadow-xl z-10 transform md:-translate-y-4" 
-                  : "glass-card shadow-lg"
-              }`}
-            >
-              {plan.popular && (
-                <>
-                  <div className="absolute top-0 right-0 transform translate-x-8 -translate-y-8 w-24 h-24 bg-accent rounded-full opacity-20"></div>
-                  <div className="absolute top-0 right-0 z-10">
-                    <div className="bg-gradient-primary text-white text-xs font-bold px-4 py-1 rounded-bl-lg shadow-sm">
-                      Popular
-                    </div>
-                  </div>
-                </>
-              )}
-              
-              <div className="p-6 md:p-8">
-                <div>
-                  <h3 className="text-xl font-semibold">{plan.name}</h3>
-                  <div className="mt-4 flex items-baseline">
-                    <span className="text-4xl font-bold">{plan.price}</span>
-                    {plan.period && (
-                      <span className="text-gray-500 ml-2">{plan.period}</span>
-                    )}
-                  </div>
-                  <p className="mt-4 text-gray-600">{plan.description}</p>
-                </div>
-                
-                <div className="mt-8">
-                  <ul className="space-y-4">
-                    {plan.features.map((feature, i) => (
-                      <li key={i} className="flex items-start">
-                        <div className={`flex-shrink-0 w-5 h-5 rounded-full ${plan.popular ? 'bg-accent' : 'bg-gray-200'} flex items-center justify-center mt-1`}>
-                          <Check className={`h-3 w-3 ${plan.popular ? 'text-white' : 'text-gray-700'}`} />
-                        </div>
-                        <span className="ml-3 text-gray-600">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                
-                <div className="mt-8">
-                  <a
-                    href={!plan.disabled ? "https://t.me/SpendTrackerBot" : "#"}
-                    className={`w-full text-center py-3 px-4 rounded-lg font-medium flex items-center justify-center ${
-                      plan.disabled
-                        ? "bg-gray-200 text-gray-500 cursor-not-allowed"
-                        : plan.popular
-                        ? "button"
-                        : "bg-white hover:bg-gray-50 border border-accent text-accent hover:text-accent-dark transition-colors"
-                    }`}
-                  >
-                    {plan.cta}
-                    {!plan.disabled && (
-                      <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                      </svg>
-                    )}
-                  </a>
-                </div>
+
+        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
+          {/* Free Plan */}
+          <div className="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-xl transition-shadow flex flex-col">
+            <div className="p-8 flex-1 flex flex-col">
+              <h3 className="text-xl font-bold mb-4 text-gray-800">Free</h3>
+              <div className="mb-5">
+                <span className="text-4xl font-bold text-gray-900">$0</span>
+                <span className="text-gray-500 ml-2">/ month</span>
               </div>
+              <p className="text-gray-600 mb-6">Perfect for personal expense tracking</p>
+
+              <ul className="space-y-3 mb-8 flex-1">
+                {[
+                  "Unlimited expense tracking",
+                  "Default categories",
+                  "Single currency support"
+                ].map((feature, i) => (
+                  <li key={i} className="flex items-center">
+                    <svg className="w-5 h-5 text-accent mr-2" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    <span className="text-gray-600">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <a
+                href="https://t.me/fundu_expenses_bot"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full py-3 px-6 text-center text-white bg-accent rounded-lg mt-auto hover:brightness-110 transition-colors"
+              >
+                <div className='text-white'>Get Started</div>
+              </a>
             </div>
-          ))}
-        </div>
-        
-        <div className="mt-16 text-center max-w-2xl mx-auto bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 rounded-2xl p-8 shadow-lg">
-          <h3 className="text-xl font-semibold mb-4">Need a custom plan for your business?</h3>
-          <p className="text-gray-600 mb-6">
-            We offer special pricing and features for businesses of all sizes. Contact us to learn more.
-          </p>
-          <a 
-            href="mailto:contact@spendtracker.app" 
-            className="inline-flex items-center text-accent hover:text-accent-dark"
-          >
-            Contact for Business Plans
-            <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-            </svg>
-          </a>
+          </div>
+
+          {/* Premium Plan */}
+          <div className="bg-gradient-primary rounded-2xl overflow-hidden shadow-xl relative group hover:shadow-2xl hover:scale-[1.01] transition-all flex flex-col">
+            {/* Highlight badge */}
+            <div className="absolute top-4 right-4 bg-yellow-400 text-accent-dark text-xs font-bold px-3 py-1 rounded-full">
+              MOST POPULAR
+            </div>
+
+            {/* Glow effect */}
+            <div className="absolute inset-0 bg-gradient-to-r from-accent-light to-accent opacity-0 group-hover:opacity-20 transition-opacity blur-xl"></div>
+
+            <div className="p-8 relative z-10 flex-1 flex flex-col">
+              <h3 className="text-xl font-bold mb-4 text-white">Premium</h3>
+              <div className="mb-5">
+                <span className="text-white/80 ml-2">From </span>
+                <span className="text-4xl font-bold text-white">$2.99</span>
+              </div>
+              <p className="text-white/80 mb-6">Advanced features for serious money tracking</p>
+
+              <ul className="space-y-3 mb-8 flex-1">
+                {[
+                  "Everything in Free plan",
+                  "AI expense categorization",
+                  "Manage categories",
+                  "Multiple currency support",
+                  "Budget planning",
+                  "Data export (CSV)"
+                ].map((feature, i) => (
+                  <li key={i} className="flex items-center">
+                    <svg className="w-5 h-5 text-yellow-400 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    <span className="text-white">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <a
+                href="https://t.me/fundu_expenses_bot"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full py-3 px-6 text-center text-accent-dark bg-white rounded-lg mt-auto hover:bg-blue-50 transition-colors"
+              >
+                Upgrade to Premium
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>

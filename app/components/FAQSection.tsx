@@ -4,16 +4,16 @@ import { useState } from "react";
 
 const faqs = [
   {
-    question: "What is SpendTracker and how does it work?",
-    answer: "SpendTracker is a Telegram bot that helps you track your daily expenses. Simply send messages like \"coffee $4.50\" or \"groceries $34.99\" and the bot automatically records and categorizes your spending. You can then request reports and insights about your financial habits."
+    question: "What is Fundu and how does it work?",
+    answer: "Fundu is a Telegram bot that helps you track your daily expenses. Simply send messages like \"coffee 4.50\" or \"groceries 34.99\" and the bot automatically records and categorizes your spending. You can then request reports and insights about your financial habits."
   },
   {
-    question: "Is SpendTracker completely free to use?",
-    answer: "SpendTracker offers a free tier that includes unlimited expense tracking, daily and weekly reports, basic categorization, and 7-day expense history. For additional features like unlimited history, custom categories, and budget planning, we offer affordable Premium plans."
+    question: "Is Fundu completely free to use?",
+    answer: "Fundu offers a free tier that includes unlimited expense tracking, basic categorization, and 7-day expense history. For additional features like unlimited history, custom categories, and budget planning, we offer an affordable Premium plan."
   },
   {
-    question: "Do I need to create an account to use SpendTracker?",
-    answer: "No! That's the beauty of SpendTracker. Just find @SpendTrackerBot on Telegram and start chatting with it. No registration, email, or personal information is required to get started."
+    question: "Do I need to create an account to use Fundu?",
+    answer: "No! That's the beauty of Fundu. Just find @Fundu_expenses_Bot on Telegram and start chatting with it. No registration, email, or personal information is required to get started."
   },
   {
     question: "Is my financial data safe and private?",
@@ -24,16 +24,12 @@ const faqs = [
     answer: "Yes, Premium users can export their spending data as CSV files, which can be opened in Excel, Google Sheets, or other spreadsheet programs for further analysis or record-keeping."
   },
   {
-    question: "What currencies does SpendTracker support?",
-    answer: "SpendTracker supports most major currencies including USD, EUR, GBP, CAD, AUD, JPY, and many more. You can set your preferred currency using the /settings command."
-  },
-  {
-    question: "Can I use SpendTracker with my family members?",
-    answer: "We're working on a Family plan that will allow shared expense tracking among multiple users. This feature is coming soon!"
+    question: "What currencies does Fundu support?",
+    answer: "Fundu supports most major currencies including USD, EUR, GBP, CAD, AUD, JPY, and many more. You can set your preferred currency using the /settings command."
   },
   {
     question: "How do I get help if I have issues or questions?",
-    answer: "You can use the /help command within the bot for common questions, or contact our support team at support@spendtracker.app for more specific assistance."
+    answer: "You can use the /help command within the bot for common questions, or contact our support team at support@Fundu.app for more specific assistance."
   }
 ];
 
@@ -52,12 +48,12 @@ export default function FAQSection() {
             Frequently Asked <span className="text-accent">Questions</span>
           </h2>
           <p className="text-lg text-secondary-dark max-w-2xl mx-auto">
-            Everything you need to know about SpendTracker and how it can help you manage your finances.
+            Everything you need to know about Fundu and how it helps you with your finances.
           </p>
         </div>
-        
-        <div className="max-w-3xl mx-auto">
-          <div className="space-y-4">
+
+        <div className="max-w-2xl mx-auto">
+          <div className="space-y-3">
             {faqs.map((faq, index) => (
               <div key={index} className="border border-gray-200 rounded-lg overflow-hidden">
                 <button
@@ -81,30 +77,17 @@ export default function FAQSection() {
                   </svg>
                 </button>
                 <div
-                  className={`overflow-hidden transition-all duration-300 ${
-                    openIndex === index ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-                  }`}
+                  className={`overflow-hidden transition-all duration-300 ${openIndex === index ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+                    }`}
                 >
-                  <div className="px-6 pb-4 text-secondary-dark">
+                  <div className="px-6 pb-4 pt-3 text-secondary-dark">
                     {faq.answer}
                   </div>
                 </div>
               </div>
             ))}
           </div>
-          
-          <div className="mt-12 text-center p-6 bg-accent/5 rounded-xl">
-            <h3 className="text-xl font-semibold mb-3">Still have questions?</h3>
-            <p className="mb-4 text-secondary-dark">
-              We're here to help! Reach out to our friendly support team.
-            </p>
-            <a
-              href="mailto:support@spendtracker.app"
-              className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-accent hover:bg-accent-light"
-            >
-              Contact Support
-            </a>
-          </div>
+
         </div>
       </div>
     </section>

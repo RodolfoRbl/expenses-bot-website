@@ -6,7 +6,7 @@ import Link from "next/link";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  
+
   // Handle scrolling effect for glass navbar
   useEffect(() => {
     const handleScroll = () => {
@@ -16,69 +16,68 @@ export default function Navbar() {
         setScrolled(false);
       }
     };
-    
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <header className={`sticky top-0 z-50 transition-all duration-300 ${
-      scrolled 
-        ? "backdrop-blur-lg bg-white/70 dark:bg-gray-900/80 shadow-sm" 
+    <header className={`sticky top-0 z-50 transition-all duration-300 ${scrolled
+        ? "backdrop-blur-lg bg-white/70 dark:bg-gray-900/80 shadow-sm"
         : "bg-transparent"
-    }`}>
+      }`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 md:h-20">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
             <Link href="/" className="flex items-center">
-              <div className="w-9 h-9 rounded-lg bg-gradient-primary flex items-center justify-center text-white font-bold mr-2 shadow-sm">
-                ST
+              <div className="w-9 h-9 mr-2">
+                <img src="/logo.svg" alt="Logo" className="w-full h-full object-contain" />
               </div>
-              <span className="font-mono font-bold text-xl">SpendTracker</span>
+              <span className="font-mono font-bold text-xl">Fundu</span>
             </Link>
           </div>
-          
+
           {/* Desktop menu */}
           <nav className="hidden md:flex space-x-8">
-            <Link 
-              href="#features" 
+            <Link
+              href="#features"
               className="text-gray-700 dark:text-gray-200 hover:text-accent transition-colors py-2 px-1 border-b-2 border-transparent hover:border-accent"
             >
               Features
             </Link>
-            <Link 
-              href="#screenshots" 
+            <Link
+              href="#screenshots"
               className="text-gray-700 dark:text-gray-200 hover:text-accent transition-colors py-2 px-1 border-b-2 border-transparent hover:border-accent"
             >
               Screenshots
             </Link>
-            <Link 
-              href="#pricing" 
+            <Link
+              href="#pricing"
               className="text-gray-700 dark:text-gray-200 hover:text-accent transition-colors py-2 px-1 border-b-2 border-transparent hover:border-accent"
             >
               Pricing
             </Link>
-            <Link 
-              href="#faq" 
+            <Link
+              href="#faq"
               className="text-gray-700 dark:text-gray-200 hover:text-accent transition-colors py-2 px-1 border-b-2 border-transparent hover:border-accent"
             >
               FAQ
             </Link>
           </nav>
-          
+
           {/* CTA Button */}
           <div className="hidden md:flex items-center">
-            <a 
-              href="https://t.me/SpendTrackerBot" 
-              target="_blank" 
-              rel="noopener noreferrer" 
+            <a
+              href="https://t.me/fundu_expenses_bot"
+              target="_blank"
+              rel="noopener noreferrer"
               className="button"
             >
               Get Started
             </a>
           </div>
-          
+
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center">
             <button
@@ -100,15 +99,15 @@ export default function Navbar() {
           </div>
         </div>
       </div>
-      
+
       {/* Mobile menu - glass effect */}
       {isOpen && (
         <div className="md:hidden glass-card border-0 rounded-none border-t border-gray-200/20">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             {["Features", "Screenshots", "Pricing", "FAQ"].map((item) => (
-              <Link 
+              <Link
                 key={item}
-                href={`#${item.toLowerCase()}`} 
+                href={`#${item.toLowerCase()}`}
                 className="block px-4 py-3 rounded-lg text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-accent/10 hover:text-accent transition-colors"
                 onClick={() => setIsOpen(false)}
               >
@@ -117,7 +116,7 @@ export default function Navbar() {
             ))}
             <div className="px-4 pt-4">
               <a
-                href="https://t.me/SpendTrackerBot"
+                href="https://t.me/fundu_expenses_bot"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full button flex items-center justify-center"

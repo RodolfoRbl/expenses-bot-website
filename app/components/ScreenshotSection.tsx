@@ -10,9 +10,9 @@ const screenshots = [
     imagePlaceholder: "expense-entry-screenshot"
   },
   {
-    title: "Daily summaries",
-    description: "Get a clear breakdown of where your money went today",
-    imagePlaceholder: "daily-summary-screenshot"
+    title: "Summaries",
+    description: "Get clear breakdowns of your spending across different time periods",
+    imagePlaceholder: "summaries-screenshot"
   },
   {
     title: "Monthly reports",
@@ -34,7 +34,7 @@ export default function ScreenshotSection() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-            See SpendTracker <span className="text-accent">In Action</span>
+            See Fundu <span className="text-accent">In Action</span>
           </h2>
           <p className="text-lg text-secondary-dark max-w-2xl mx-auto">
             Our simple interface makes expense tracking a breeze, right within your Telegram app.
@@ -54,7 +54,7 @@ export default function ScreenshotSection() {
                     <div className="bg-[#2B5278] p-3 flex items-center">
                       <div className="w-8 h-8 rounded-full bg-gray-300 flex-shrink-0"></div>
                       <div className="ml-3">
-                        <div className="text-white text-sm font-medium">SpendTracker Bot</div>
+                        <div className="text-white text-sm font-medium">Fundu Bot</div>
                         <div className="text-gray-300 text-xs">Active now</div>
                       </div>
                     </div>
@@ -62,25 +62,25 @@ export default function ScreenshotSection() {
                       {activeIndex === 0 && (
                         <>
                           <div className="bg-[#2B5278] text-white p-2 rounded-lg rounded-bl-none max-w-[80%] ml-auto">
-                            I just spent $14.50 on lunch
+                            4 pizza
                           </div>
                           <div className="bg-[#182533] text-white p-2 rounded-lg rounded-tl-none max-w-[80%]">
-                            Added $14.50 for lunch to today's expenses.
-                            Category: Food & Drink 🍔
+                            ✅ Logged: $4.00 in 🍔 Food
                           </div>
                         </>
                       )}
                       {activeIndex === 1 && (
                         <>
                           <div className="bg-[#2B5278] text-white p-2 rounded-lg rounded-bl-none max-w-[80%] ml-auto">
-                            /report today
+                            /stats
                           </div>
-                          <div className="bg-[#182533] text-white p-2 rounded-lg rounded-tl-none max-w-[80%]">
-                            <div className="font-medium mb-1">Today's spending</div>
-                            <div>Total: $32.50</div>
-                            <div>- Food: $14.50</div>
-                            <div>- Transport: $8.00</div>
-                            <div>- Shopping: $10.00</div>
+                          <div className="bg-[#182533] text-white p-2 rounded-lg rounded-tl-none max-w-[100%]">
+                            <div className="font-medium mb-1">📊 Stats for This Week:</div>
+                            <div>➖ Expenses</div>
+                            <div>2025-04-28 ■■■■■■■■■■ $4.00</div>
+                            <div>Total Expenses: $4.00 (1)</div>
+                            <div>Total Income: $0.00 (0)</div>
+                            <div>Total Net: -$4.00</div>
                           </div>
                         </>
                       )}
@@ -89,7 +89,7 @@ export default function ScreenshotSection() {
                           <div className="bg-[#2B5278] text-white p-2 rounded-lg rounded-bl-none max-w-[80%] ml-auto">
                             /report month
                           </div>
-                          <div className="bg-[#182533] text-white p-2 rounded-lg rounded-tl-none max-w-[80%]">
+                          <div className="bg-[#182533] text-white p-2 rounded-lg rounded-tl-none max-w-[100%]">
                             <div className="font-medium mb-1">Monthly Report</div>
                             <div>Total: $482.75</div>
                             <div className="mt-2 space-y-1">
@@ -166,7 +166,7 @@ export default function ScreenshotSection() {
               {screenshots.map((screenshot, index) => (
                 <div 
                   key={index}
-                  className={`cursor-pointer p-4 rounded-lg transition-all ${activeIndex === index ? 'bg-accent/10 border-l-4 border-accent' : 'hover:bg-gray-50'}`}
+                  className={`cursor-pointer p-4 rounded-lg transition-all ${activeIndex === index ? 'bg-blue-500/10 border-l-4 border-blue-500' : 'hover:bg-gray-50'}`}
                   onClick={() => setActiveIndex(index)}
                 >
                   <h3 className="text-xl font-semibold mb-2">{screenshot.title}</h3>

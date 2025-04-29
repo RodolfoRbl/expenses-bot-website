@@ -1,6 +1,5 @@
 import HeroSection from "./components/HeroSection";
-import FeaturesSection from "./components/FeaturesSection";
-import ScreenshotSection from "./components/ScreenshotSection";
+import FeaturesSection from "./components/FeaturesSection"; // Ensure this file exists or correct the path
 import PricingSection from "./components/PricingSection";
 import FAQSection from "./components/FAQSection";
 import Footer from "./components/Footer";
@@ -16,9 +15,6 @@ export default function Home() {
           <FeaturesSection />
         </div>
         <div className="w-full bg-white">
-          <ScreenshotSection />
-        </div>
-        <div className="w-full bg-secondary">
           <PricingSection />
         </div>
         <div className="w-full bg-white">

@@ -18,20 +18,20 @@ const poppins = Poppins({
 
 // Enhanced metadata
 export const metadata: Metadata = {
-  title: "SpendTracker | Simple Expense Tracking Telegram Bot",
-  description: "Track your daily expenses effortlessly with SpendTracker, a user-friendly Telegram bot. Get insights, set budgets, and take control of your finances.",
+  title: "Fundu | Expense Tracking Telegram Bot",
+  description: "Track your daily expenses effortlessly with Fundu, a user-friendly Telegram bot. Get insights, set budgets, and take control of your finances.",
   keywords: ["expense tracker", "telegram bot", "finance", "budget", "personal finance", "money management"],
-  authors: [{ name: "SpendTracker Team" }],
+  authors: [{ name: "Fundu Team" }],
   openGraph: {
     type: "website",
-    title: "SpendTracker | Simple Expense Tracking Telegram Bot",
-    description: "Track your daily expenses effortlessly with SpendTracker, a user-friendly Telegram bot.",
-    url: "https://spendtracker.app",
+    title: "Fundu | Expense Tracking Telegram Bot",
+    description: "Track your daily expenses effortlessly with FUndu, a user-friendly Telegram bot.",
+    url: "https://fundu.app",
   },
   twitter: {
     card: "summary_large_image",
-    title: "SpendTracker | Simple Expense Tracking Telegram Bot",
-    description: "Track your daily expenses effortlessly with SpendTracker",
+    title: "Fundu | Expense Tracking Telegram Bot",
+    description: "Track your daily expenses effortlessly with Fundu",
   },
 };
 
